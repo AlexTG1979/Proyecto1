@@ -1,0 +1,231 @@
+#include <iostream>
+#include <fstream>
+#include <string>
+
+using namespace std;
+
+int main()
+{
+  int iA, iB, iC, iD, iE, iF, iG, iH, iI, iJ, iK, iL, iM, iN;
+  int iLugar;
+  int iX, iY;
+  int iResultado;
+  double dResultado;
+  char cA, cB, cC, cD, cE, cF, cG, cH, cI, cJ, cK, cL, cM, cN;
+  char cOp;
+  string sEncript;
+  int iValor[1000];
+  string sArchivoE;
+  string sArchivoS;
+
+  cout << "Escribe el nombre del archivo de entrada: " << endl;
+  getline(cin, sArchivoE);
+
+  cout << "Escribe el nombre del archivo de salida: " << endl;
+  getline(cin, sArchivoS);
+
+  ifstream ifCodigos;
+  ifCodigos.open("entradaP1.txt");
+
+  ofstream ofCodigos;
+  ofCodigos.open("salidaP1.txt");
+
+  ifCodigos >> cA >> cB >> cC >> cD >> cE >> cF >> cG >> cH >> cI >> cJ >> cK >> cL >> cM >> cN;
+
+  while(!ifCodigos.eof())
+  {
+    ifCodigos >> sEncript;
+    
+    iA = 0;
+    iB = 0;
+    iC = 0;
+    iD = 0;
+    iE = 0;
+    iF = 0;
+    iG = 0;
+    iH = 0;
+    iI = 0;
+    iJ = 0;
+    iK = 0;
+    iL = 0;
+    iM = 0;
+    iN = 0;
+
+    while(iA != -1)
+    {
+      iLugar = sEncript.find(cA);
+      if(iLugar != -1)
+      {
+        sEncript.erase(iLugar, 1);
+        sEncript.insert(iLugar, "0");
+      }
+      iA = iLugar;
+    }
+    while(iB != -1)
+    {
+      iLugar = sEncript.find(cB);
+      if(iLugar != -1)
+      {
+        sEncript.erase(iLugar, 1);
+        sEncript.insert(iLugar, "1");
+      }
+      iB = iLugar;
+    }
+    while(iC != -1)
+    {
+      iLugar = sEncript.find(cC);
+      if(iLugar != -1)
+      {
+        sEncript.erase(iLugar, 1);
+        sEncript.insert(iLugar, "2");
+      }
+      iC = iLugar;
+    }
+    while(iD != -1)
+    {
+      iLugar = sEncript.find(cD);
+      if(iLugar != -1)
+      {
+        sEncript.erase(iLugar, 1);
+        sEncript.insert(iLugar, "3");
+      }
+      iD = iLugar;
+    }
+    while(iE != -1)
+    {
+      iLugar = sEncript.find(cE);
+      if(iLugar != -1)
+      {
+        sEncript.erase(iLugar, 1);
+        sEncript.insert(iLugar, "4");
+      }
+      iE = iLugar;
+    }
+    while(iF != -1)
+    {
+      iLugar = sEncript.find(cF);
+      if(iLugar != -1)
+      {
+        sEncript.erase(iLugar, 1);
+        sEncript.insert(iLugar, "5");
+      }
+      iF= iLugar;
+    }
+    while(iG != -1)
+    {
+      iLugar = sEncript.find(cG);
+      if(iLugar != -1)
+      {
+        sEncript.erase(iLugar, 1);
+        sEncript.insert(iLugar, "6");
+      }
+      iG = iLugar;
+    }
+    while(iH != -1)
+    {
+      iLugar = sEncript.find(cH);
+      if(iLugar != -1)
+      {
+        sEncript.erase(iLugar, 1);
+        sEncript.insert(iLugar, "7");
+      }
+      iH = iLugar;
+    }
+    while(iI != -1)
+    {
+      iLugar = sEncript.find(cI);
+      if(iLugar != -1)
+      {
+        sEncript.erase(iLugar, 1);
+        sEncript.insert(iLugar, "8");
+      }
+      iI = iLugar;
+    }
+    while(iJ != -1)
+    {
+      iLugar = sEncript.find(cJ);
+      if(iLugar != -1)
+      {
+        sEncript.erase(iLugar, 1);
+        sEncript.insert(iLugar, "9");
+      }
+      iJ = iLugar;
+    }
+    while(iK != -1)
+    {
+      iLugar = sEncript.find(cK);
+      if(iLugar != -1)
+      {
+        sEncript.erase(iLugar, 1);
+        sEncript.insert(iLugar, "+");
+      }
+      iK = iLugar;
+    }
+    while(iL != -1)
+    {
+      iLugar = sEncript.find(cL);
+      if(iLugar != -1)
+      {
+        sEncript.erase(iLugar, 1);
+        sEncript.insert(iLugar, "-");
+      }
+      iL = iLugar;
+    }
+    while(iM != -1)
+    {
+      iLugar = sEncript.find(cM);
+      if(iLugar != -1)
+      {
+        sEncript.erase(iLugar, 1);
+        sEncript.insert(iLugar, "*");
+      }
+      iM = iLugar;
+    }
+    while(iN != -1)
+    {
+      iLugar = sEncript.find(cN);
+      if(iLugar != -1)
+      {
+        sEncript.erase(iLugar, 1);
+        sEncript.insert(iLugar, "/");
+      }
+      iN = iLugar;
+    }
+
+    ofCodigos << sEncript << endl;
+    
+  }
+
+  ifCodigos.close();
+  ofCodigos.close();
+
+  ifstream ifTraduccion;
+  ifTraduccion.open("salidaP1.txt");
+
+  while(!ifTraduccion.eof())
+  {
+    ifTraduccion >> iX >> cOp >> iY;
+    
+    if(cOp == '+')
+    {
+      iResultado = iX + iY;
+    }
+    if(cOp == '-')
+    {
+      iResultado = iX - iY;
+    }
+    if(cOp == '*')
+    {
+      iResultado = iX * iY;
+    }
+    if(cOp == '/')
+    {
+      dResultado = iX / iY;
+    }
+  }
+
+  ifTraduccion.close();
+
+  return 0;
+
+}
